@@ -7,9 +7,10 @@
 	-webkit-transform: translate(-100px, -100px);
 	position:absolute;
 	border-radius: 50%;
-	background:blue;
+	background:#009EDD;
 	display:table;
 	text-align:center;
+	overflow:hidden;
 }
 
 .ball-inner {

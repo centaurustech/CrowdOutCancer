@@ -41,11 +41,10 @@
 							Join the crowd {{user_name}}!
 							%br
 							%img{:'ng-src' => '{{user_image}}'}
-						%textarea#message{placeholder: 'Message to the researchers'}
-						%input#name{:type => 'text', :name => 'name'}
+						-#%textarea#message{placeholder: 'Message to the researchers'}
 						%span How much would you like to donate?
 						%fieldset
 							%legend
-							%input{:type => 'button', :value => '£10'}
-							%input{:type => 'button', :value => '£100'}
-							%input{:type => 'button', :value => '£1000'}
+							%input.donate{:type => 'button', :value => '£10'}
+							%input.donate{:type => 'button', :value => '£100'}
+							%input.donate{:type => 'button', :value => '£1000'}

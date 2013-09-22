@@ -19,10 +19,16 @@ GEM
     fssm (0.2.10)
     haml (4.0.3)
       tilt
+    httpclient (2.3.4.1)
     less (2.4.0)
       commonjs (~> 0.2.7)
     libv8 (3.16.14.3)
     mime-types (1.25)
+    multi_json (1.8.0)
+    pusher (0.12.0)
+      httpclient (~> 2.3.0)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -30,6 +36,7 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sass (3.2.10)
+    signature (0.1.7)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -49,6 +56,7 @@ DEPENDENCIES
   foreman
   haml
   less
+  pusher
   rest-client
   sinatra
   therubyracer

@@ -4,10 +4,9 @@
 	height:100%;
 	-webkit-transition: -webkit-transform 0ms;
 	/*transform: translate(-100px, -100px, 0 0);*/
-	-webkit-transform: translate(-100px, -100px);
 	position:absolute;
 	border-radius: 50%;
-	background:#009EDD;
+	background:#1FB7EB;
 	display:table;
 	text-align:center;
 	overflow:hidden;
@@ -21,14 +20,62 @@
 .ball {
 	position:absolute;
 	-webkit-transition: -webkit-transform 2250ms;
-
 	transform: translate(0, 0, 0, 0);
-
-	width:200px;
-	height:200px;
 }
 
-.standard-margin { margin:1em; }
+.target-ball {
+	height:100px;
+	width:100px;
+}
+.target-ball .ball-background {
+	background: white;
+	font-size: 2em;
+	font-weight: bold;
+	-webkit-transform: translate(-50px, -50px);
+}
+
+.project-globe .ball-background {
+	background-color: #EB008C;
+	background-image: url(/water.png);
+	background-repeat: no-repeat;
+	background-position: 0 300px;
+}
+.project-globe {
+	color: white;
+	font-weight:bold;
+	height:500px;
+	width:500px;
+}
+.project-globe .ball-background {
+	-webkit-transform: translate(-250px, -250px);
+}
+
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.with-margin {
+    padding: 1em;
+}
+
+.header-box {
+	line-height:100px;
+	height:100px;
+	padding:0;
+	margin:0;
+	background:url(/logo.png);
+	background-repeat: no-repeat;
+}
+h1 span {
+	display:none;
+}
+h1 cite {
+	margin-left:150px;
+	font-size:50%;
+}
+
+.standard-margin { padding:1em; }
 
 .main { background: white; }
 
@@ -38,8 +85,8 @@ header { background: white; }
 
 #circles {
 
-	background: white;
-	height: 400px;
+	background: #F9F7FC;
+	height: 800px;
 
  }
 

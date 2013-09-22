@@ -1,7 +1,7 @@
 !!!
 %html
 	%head
-		%title Beating cancer together
+		%title Crowd Out Cancer
 		%link{:rel => 'stylesheet', :href => 'http://yui.yahooapis.com/pure/0.3.0/pure-min.css'}
 		%link{:rel => 'stylesheet', :href => '/crowd.css'}
 		%script{:src => 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js'}
@@ -9,29 +9,27 @@
 	%body{:'ng-app' => true}
 		%script{:src => '/facebook.js'}
 		#all
-			#main.pure-g{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
-				%header.pure-u-1
-					.standard-margin
-						.pure-u-1-2
-							%h1 Crowd out Cancer
-							%cite by Cancer Research UK
-						-#.pure-u-1-3
-							
-						-#%a#login_button{:'ng-click' => 'fb_login()'}
-						-#	Log in with Facebook
-						-#%a#logout_button{:'ng-click' => 'fb_logout()'}
-						-#	Log out of Facebook
-				.pure-u-1.feature
-					.standard-margin
-						%p
-							Hello
-							%fb:login-button{:'show-faces' => true, width:'178px'}
+			#main.pure-g-r{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
+				.pure-u-1-2.with-margin
+					%h1.header-box
+						%span Crowd out Cancer
+						%cite by Cancer Research UK
+				.pure-u-1-4.with-margin
+					.header-box.feature
+						%fb:login-button{:'show-faces' => true, width:'178px'}
 				#circles.pure-u-1
 					#field
-						.ball
+						.ball.project-globe
 							.ball-background
 								.ball-inner
+									%h1
+										New Genes
 									%p
-										contents
+										Hunting for hidden dangers in the breast-cancer genome.
+									.ball.person-ball
+										Jo Morris, Birmingham
+									.ball.target-ball
+										%p Target £50k
 									%p
-										newline...
+										I'm asking for £50k for one year to generate preliminary data
+										so I can apply for a fellowship.

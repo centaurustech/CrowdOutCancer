@@ -15,10 +15,8 @@ class BCTS < Sinatra::Base
 	  haml :index
 	end
 
-	get '/' do
+	get '/thing' do
 		
-		haml :index
-
 	end
 
 end

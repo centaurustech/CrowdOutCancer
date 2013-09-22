@@ -2,56 +2,106 @@
 
 function CrowdOutBallsCtrl ($scope) {
 
+	var field;
+
 	$scope.init = function () {
-		var b = CreateBall(100, 0, 0);
-		b.setPosition(200, 200);
+		field = CreateField(100);
+		setInterval($scope.randomise, 1000);
+	};
+
+	$scope.randomise = function () {
+		field.randomise();
 	};
 
 }
 
-function CreateField () {
 
-	var ball = CreateBall(100, 100, 100);
+
+function CreateField (numBalls) {
+
+	var balls = [];
+
+	for(var i=0; i<numBalls; ++i) {
+		balls.push(CreateRandomBall());
+	}
 
 	return {
-		balls: [ball],
+		balls: balls,
 
-		render: function () {
-			Render(balls);
+		randomise: function() {
+			for(var i in balls) {
+				var p = GetRandomPosition(960, 960);
+				balls[i].setPosition(p.x, p.y);
+			}
 		}
 	};
 
 }
 
-function CreateBall(radius, xPos, yPos) {
+function CreateRandomBall() {
+	var pos = GetRandomPosition(960, 960);
+	var radius = GetRandomNumber(10, 150);
+	var colour = GetRandomColour();
+	return CreateBall(radius, pos.x, pos.y, colour);
+}
+
+function GetRandomColour() {
+	if(Math.random() < 0.5) {
+		return 'red';
+	}
+
+	return 'white';
+}
+
+function GetRandomPosition(xmax, ymax) {
+	return {
+		x: GetRandomNumber(0, xmax),
+		y: GetRandomNumber(0, ymax)
+	};
+}
+
+function GetRandomNumber (min, max) {
+	return Math.floor(Math.random() * (max - min) + min);
+}
+
+function CreateBall(radius, xPos, yPos, colour) {
 
 	var el = document.createElement('div');
 	document.getElementsByTagName('body')[0].insertBefore(el, null);
 	el.style.width = (2*radius) + 'px';
 	el.style.height = (2*radius) + 'px';
-	el.style.background = 'red';
+	el.style.background = colour;
 	el.style.borderRadius = '50%';
+
+	el.style.position = 'absolute';
+	el.className = 'ball';
+	//el.style.top = '0';
+	//el.style.left = '0';
+
 	//el.style.borderTopLeftRadius = '50%';
 	//el.style.borderTopRightRadius = '50%';
 	//el.style.borderBottomLeftRadius = '50%';
 	//el.style.borderBottomRightRadius = '50%';
 
-	var x = xPos;
-	var y = yPos;
+	var x, y;
+
+	var setPosition = function(xPos, yPos) {
+		x = xPos;
+		y = yPos;
+		var transform = "translate(" + x + "px, " + y + "px)";
+		el.style.webkitTransform = transform;
+	    el.style.mozTransform = transform;
+	    el.style.msTransform = transform;
+	    el.style.oTransform = transform;
+	    el.style.transform = transform;
+	};
+
+	setPosition(xPos, yPos);
 
 	return {
 		radius: radius,
-		setPosition: function(xPos, yPos) {
-			x = xPos;
-			y = yPos;
-			var transform = "translate(" + x + "," + y + ")";
-			el.style.webkitTransform = transform;
-		    el.style.mozTransform = transform;
-		    el.style.msTransform = transform;
-		    el.style.oTransform = transform;
-		    el.style.transform = transform;
-		},
-		getPosition: function(){
+		setPosition: setPosition,
+		getPosition: function() {
 			return {x: x, y: y};
 		}
 	};

@@ -1,0 +1,8 @@
+
+.ball {
+	transition:         transform 2250ms;
+	-moz-transition:    -moz-transform 2250ms;
+	-ms-transition:     -ms-transform 2250ms;
+	-o-transition:      -o-transform 2250ms;
+	-webkit-transition: -webkit-transform 2250ms;
+}

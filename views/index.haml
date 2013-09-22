@@ -36,8 +36,9 @@
 				#donate-box.with-margin.pure-u-1-3
 					.pure-form.pure-form-stacked
 						%p
-							Hi, {{user_name}}
-							%img{:src => '{user_image}'}
+							Join the crowd {{first_name}}!
+							%br
+							%img{:src => '{{user_image}}'}
 						%textarea#message{placeholder: 'Message to the researchers'}
 						%input#name{:type => 'text', :name => 'name'}
 						%span How much would you like to donate?

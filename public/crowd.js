@@ -6,14 +6,8 @@ function CrowdOutBallsCtrl ($scope) {
 
 	$scope.logged_in = false;
 	$scope.user_name = '';
-	$scope.user_image = '';
-
-	$scope.init = function () {
-		setTimeout(function () {
-			test_logged_in($scope);
-		}, 300);
-	};
-
+	$scope.user_image = 'http://schoolofeverything.com/files/imagecache/insert/sites/default/themes/everything2/images/blank_user_pic_insert.gif';
+	
 	$scope.randomise = function () {
 		field.randomise();
 	};
@@ -23,7 +17,12 @@ function CrowdOutBallsCtrl ($scope) {
 		FB.login(function(response) {
 			if (response.authResponse) {
 				console.log('Welcome!  Fetching your information.... ');
-				get_user_details($scope);
+				FB.api('/me?fields=picture,name', function(response) {
+					console.log('Good to see you, ' + response.name + '.');
+					$scope.user_name = response.name;
+					$scope.user_image = response.picture.data.url;
+					$scope.logged_in = true;
+				});
 			} else {
 				console.log('User cancelled login or did not fully authorize.');
 			}
@@ -39,42 +38,6 @@ function CrowdOutBallsCtrl ($scope) {
 
 }
 
-
-
-function test_logged_in ($scope) {
-	FB.getLoginStatus(function(response) {
-			if (response.status === 'connected') {
-				// the user is logged in and has authenticated your
-				// app, and response.authResponse supplies
-				// the user's ID, a valid access token, a signed
-				// request, and the time the access token 
-				// and signed request each expire
-				var uid = response.authResponse.userID;
-				var accessToken = response.authResponse.accessToken;
-
-				get_user_details($scope);
-
-			} else if (response.status === 'not_authorized') {
-				// the user is logged in to Facebook, 
-				// but has not authenticated your app
-			} else {
-				// the user isn't logged in to Facebook.
-			}
-		});
-}
-
-
-
-
-
-function get_user_details ($scope) {
-	FB.api('/me?fields=picture,name', function(response) {
-		console.log('Good to see you, ' + response.name + '.');
-		$scope.user_name = response.name;
-		$scope.user_image = response.picture.data.url;
-		$scope.logged_in = true;
-	});
-}
 
 function CreateField (numBalls) {
 

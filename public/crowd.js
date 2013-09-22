@@ -1,6 +1,6 @@
 
 
-function CrowdOutBallsCtrl ($scope) {
+function CrowdOutBallsCtrl ($scope, $http) {
 
 	var field;
 
@@ -9,6 +9,8 @@ function CrowdOutBallsCtrl ($scope) {
 	$scope.logged_in = false;
 	$scope.user_name = '';
 	$scope.user_image = 'http://schoolofeverything.com/files/imagecache/insert/sites/default/themes/everything2/images/blank_user_pic_insert.gif';
+
+	$scope.donations = [];
 
 	$scope.randomise = function () {
 		field.randomise();
@@ -41,7 +43,13 @@ function CrowdOutBallsCtrl ($scope) {
 	};
 
 	$scope.donate = function () {
-		
+		$http.post('/donation', 'name=' + $scope.user_name + '&image=' + $scope.user_image).
+		success(function (data, status, headers, config) {
+			
+		}).
+		error(function (data, status, headers, config) {
+
+		});
 	};
 
 }

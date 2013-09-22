@@ -18,7 +18,25 @@ function CrowdOutBallsCtrl ($scope, $http) {
 
 	$scope.fb_login = function () {
 
-		FB.login(function(response) {
+		FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+FB.api('/me?fields=picture,name', function(response) {
+					console.log('Good to see you, ' + response.name + '. ' + response.picture.data.url);
+					s.user_name = response.name;
+					s.user_image = response.picture.data.url;
+					s.logged_in = true;
+
+					var fs = document.getElementsByTagName('fieldset');
+
+					fs[0].style.display = 'block';
+					fs[1].style.display = 'block';
+					fs[2].style.display = 'block';
+
+				});
+		    var uid = response.authResponse.userID;
+		    var accessToken = response.authResponse.accessToken;
+		  } else {
+		    FB.login(function(response) {
 			if (response.authResponse) {
 				console.log('Welcome! Fetching your information.... ');
 				FB.api('/me?fields=picture,name', function(response) {
@@ -38,6 +56,10 @@ function CrowdOutBallsCtrl ($scope, $http) {
 				console.log('User cancelled login or did not fully authorize.');
 			}
 		});
+		  }
+		 });
+
+		
 
 		return false;
 

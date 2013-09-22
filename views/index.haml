@@ -3,8 +3,9 @@
 	%head
 		%title Beating cancer together
 		%script{:src => 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js'}
-		
-	%body
-		%header
-			%p
-				Hello haml.
+		%script{:src => '/crowd.js'}
+	%body{:'ng-app' => true}
+		#all{:'ng-controller' => 'CrowdOutBallsCtrl'}
+			%p Crowd Out Cancer
+			#field{:'data-ng-controller' => 'CrowdOutBallsCtrl', :'data-ng-init' => 'init()'}
+			

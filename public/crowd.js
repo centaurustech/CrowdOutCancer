@@ -81,8 +81,18 @@ function add_donation (d) {
 
 	wall.insertBefore(image, null);
 
+	var bg = document.getElementById('waterbg');
+	up += increment;
+
+	var bgpos = (waterlevel - up) + 'px;';
+
+	bg.style.backgroundPosition = bgpos;
+
 }
 
+var waterlevel = 400;
+var increment = 2;
+var up = 0;
 
 
 function CreateField (numBalls) {

@@ -19,4 +19,12 @@ class BCTS < Sinatra::Base
 		
 	end
 
+	post '/donation' do
+		Pusher['test_channel'].trigger('donate', {
+			:amount => params['amount'],
+			:image => params['image'],
+			:name => params['name']
+		})
+	end
+
 end

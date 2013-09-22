@@ -42,6 +42,22 @@ function CrowdOutBallsCtrl ($scope) {
 
 }
 
+ // If your Heroku application is within the EU region,
+ // uncomment the followling lines
+ // Pusher.host = 'ws-eu.pusher.com';
+ // Pusher.sockjs_host = 'sockjs-eu.pusher.com';
+
+var pusher = new Pusher('f89afcbf862a43cde60d'); // uses your APP KEY
+var channel = pusher.subscribe('test_channel');
+channel.bind('donate', function(data) {
+	add_donation(data);
+});
+
+function add_donation (d) {
+	alert(d.amount + d.name + d.image);
+}
+
+
 
 function CreateField (numBalls) {
 

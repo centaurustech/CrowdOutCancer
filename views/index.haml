@@ -2,17 +2,34 @@
 %html
 	%head
 		%title Beating cancer together
+		%link{:rel => 'stylesheet', :href => 'http://yui.yahooapis.com/pure/0.3.0/pure-min.css'}
 		%link{:rel => 'stylesheet', :href => '/crowd.css'}
 		%script{:src => 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js'}
 		%script{:src => '/crowd.js'}
 	%body{:'ng-app' => true}
 		%script{:src => '/facebook.js'}
-		#all{:'ng-controller' => 'CrowdOutBallsCtrl'}
-			%p Crowd Out Cancer
-			#field{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
-			%fb:login-button{:'show-faces' => true, width:'178px'}
-			%p
-				%a#login_button{:'ng-click' => 'fb_login()'}
-					Login with Facebook
-				%a#logout_button{:'ng-click' => 'fb_logout()'}
-					Log out of Facebook
+		#all
+			#main.pure-g{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
+				%header.pure-u-1
+					.standard-margin
+						.pure-u-1-2
+							%h1 Crowd out Cancer
+							%cite by Cancer Research UK
+						-#.pure-u-1-3
+							
+						-#%a#login_button{:'ng-click' => 'fb_login()'}
+						-#	Log in with Facebook
+						-#%a#logout_button{:'ng-click' => 'fb_logout()'}
+						-#	Log out of Facebook
+				.pure-u-1.feature
+					.standard-margin
+						%p
+							Hello
+							%fb:login-button{:'show-faces' => true, width:'178px'}
+				#circles.pure-u-1
+					#field
+						.ball
+							.ball-background
+								.ball-inner
+									%p
+										contents

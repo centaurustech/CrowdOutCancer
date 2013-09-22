@@ -1,12 +1,57 @@
 
+.ball-background {
+	width:100%;
+	height:100%;
+	-webkit-transition: -webkit-transform 0ms;
+	/*transform: translate(-100px, -100px, 0 0);*/
+	-webkit-transform: translate(-100px, -100px);
+	position:absolute;
+	border-radius: 50%;
+	background:blue;
+	display:table;
+	text-align:center;
+}
+
+.ball-inner {
+	display: table-cell;
+    vertical-align: middle;
+}
+
 .ball {
-	transition:         transform 2250ms;
-	-moz-transition:    -moz-transform 2250ms;
-	-ms-transition:     -ms-transform 2250ms;
-	-o-transition:      -o-transform 2250ms;
+	position:absolute;
 	-webkit-transition: -webkit-transform 2250ms;
 
 	transform: translate(0, 0, 0, 0);
-	border-radius: 50%;
+
+	width:200px;
+	height:200px;
 }
+
+.standard-margin { margin:1em; }
+
+.main { background: white; }
+
+header { background: white; }
+
+.feature { background: #eee; }
+
+#circles {
+
+	background: white;
+	height: 400px;
+
+ }
+
+/* field is a special invisible box with overflow: visible;
+
+	It's used for coordinates of circles, with its top left representing the center
+	of the field.
+
+*/
+ #field {
+ 	position:absolute;
+ 	top:50%;
+ 	left:50%;
+ 	overflow: visible;
+ }
 

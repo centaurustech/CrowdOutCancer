@@ -107,7 +107,11 @@ header { background: white; }
 
 #donate-box {
 	position:absolute;
-	top:100px;
-	right: 0;
+	top:150px;
+	right: 1em;
 	width:200px;
+
+	background: rgba(0, 0, 0, 0.125);
+
+	border-radius: 10px;
 }

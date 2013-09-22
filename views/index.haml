@@ -33,11 +33,16 @@
 									%p
 										I'm asking for £50k for one year to generate preliminary data
 										so I can apply for a fellowship.
-				#donate-box.pure-form.pure-form-stacked.pure-u-1-4{:'ng-if' => 'logged_in'}
-					%p Hi, {{user_name}} :)
-					%textarea#message{placeholder: 'Message to the researchers'}
-					%input#name{:name => 'name'}
-					%span How much would you like to donate?
-					%input{:type => 'button', :value => '£10'}
-					%input{:type => 'button', :value => '£100'}
-					%input{:type => 'button', :value => '£1000'}
+				#donate-box.with-margin.pure-u-1-3
+					.pure-form.pure-form-stacked
+						%p
+							Hi, {{user_name}}
+							%img{:src => '{user_image}'}
+						%textarea#message{placeholder: 'Message to the researchers'}
+						%input#name{:type => 'text', :name => 'name'}
+						%span How much would you like to donate?
+						%fieldset
+							%legend
+							%input{:type => 'button', :value => '£10'}
+							%input{:type => 'button', :value => '£100'}
+							%input{:type => 'button', :value => '£1000'}

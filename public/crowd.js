@@ -76,7 +76,8 @@ function add_donation (d) {
 	image.setAttribute('alt', d.name);
 
 	image.style.display = 'inline';
-	
+	image.style.width = '100px';
+	image.style.height = '100px';
 
 	wall.insertBefore(image, null);
 

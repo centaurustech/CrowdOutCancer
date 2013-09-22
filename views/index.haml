@@ -6,6 +6,8 @@
 		%script{:src => 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js'}
 		%script{:src => '/crowd.js'}
 	%body{:'ng-app' => true}
+		%script{:src => '/facebook.js'}
 		#all{:'ng-controller' => 'CrowdOutBallsCtrl'}
 			%p Crowd Out Cancer
 			#field{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
+			%fb:login-button{:'show-faces' => true, width:'178px'}

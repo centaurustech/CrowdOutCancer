@@ -5,4 +5,8 @@
 	-ms-transition:     -ms-transform 2250ms;
 	-o-transition:      -o-transform 2250ms;
 	-webkit-transition: -webkit-transform 2250ms;
+
+	transform: translate(0, 0, 0, 0);
+	border-radius: 50%;
 }
+

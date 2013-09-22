@@ -5,8 +5,8 @@ function CrowdOutBallsCtrl ($scope) {
 	var field;
 
 	$scope.init = function () {
-		field = CreateField(100);
-		setInterval($scope.randomise, 1000);
+		//field = CreateField(100);
+		//setInterval($scope.randomise, 3000);
 	};
 
 	$scope.randomise = function () {
@@ -71,12 +71,12 @@ function CreateBall(radius, xPos, yPos, colour) {
 	el.style.width = (2*radius) + 'px';
 	el.style.height = (2*radius) + 'px';
 	el.style.background = colour;
-	el.style.borderRadius = '50%';
+	//el.style.borderRadius = '50%';
 
 	el.style.position = 'absolute';
 	el.className = 'ball';
-	//el.style.top = '0';
-	//el.style.left = '0';
+	el.style.top = '0';
+	el.style.left = '0';
 
 	//el.style.borderTopLeftRadius = '50%';
 	//el.style.borderTopRightRadius = '50%';

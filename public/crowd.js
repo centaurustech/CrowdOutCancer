@@ -43,9 +43,10 @@ function CrowdOutBallsCtrl ($scope, $http) {
 	};
 
 	$scope.donate = function () {
-		$http.post('/donation', 'name=' + $scope.user_name + '&image=' + $scope.user_image).
+		$http.post('/donation', 'name=' + $scope.user_name + '&image=' + $scope.user_image,
+		{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).
 		success(function (data, status, headers, config) {
-			
+
 		}).
 		error(function (data, status, headers, config) {
 

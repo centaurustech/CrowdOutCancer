@@ -67,7 +67,19 @@ channel.bind('donate', function(data) {
 });
 
 function add_donation (d) {
-	alert(d.amount + d.name + d.image);
+	//alert(d.name + d.image);
+
+	var wall = document.getElementById('wall');
+
+	var image = document.createElement('image');
+	image.setAttribute('src', d.image);
+	image.setAttribute('alt', d.name);
+
+	image.style.display = 'inline';
+	
+
+	wall.insertBefore(image, null);
+
 }
 
 

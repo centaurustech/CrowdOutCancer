@@ -4,10 +4,12 @@ function CrowdOutBallsCtrl ($scope) {
 
 	var field;
 
+	var s = $scope;
+
 	$scope.logged_in = false;
 	$scope.user_name = '';
 	$scope.user_image = 'http://schoolofeverything.com/files/imagecache/insert/sites/default/themes/everything2/images/blank_user_pic_insert.gif';
-	
+
 	$scope.randomise = function () {
 		field.randomise();
 	};

@@ -100,7 +100,7 @@ header { background: white; }
 */
  #field {
  	position:absolute;
- 	top:50%;
+ 	top:60%;
  	left:50%;
  	overflow: visible;
  }

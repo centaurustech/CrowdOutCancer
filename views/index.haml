@@ -11,3 +11,8 @@
 			%p Crowd Out Cancer
 			#field{:'ng-controller' => 'CrowdOutBallsCtrl', :'ng-init' => 'init()'}
 			%fb:login-button{:'show-faces' => true, width:'178px'}
+			%p
+				%a#login_button{:'ng-click' => 'fb_login()'}
+					Login with Facebook
+				%a#logout_button{:'ng-click' => 'fb_logout()'}
+					Log out of Facebook

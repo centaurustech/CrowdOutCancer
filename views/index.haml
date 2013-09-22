@@ -33,7 +33,7 @@
 									%p
 										I'm asking for £50k for one year to generate preliminary data
 										so I can apply for a fellowship.
-				#donate-box.pure-form.pure-form-stacked.pure-u-1-4{:'ng-if' => '{logged_in}'}
+				#donate-box.pure-form.pure-form-stacked.pure-u-1-4{:'ng-if' => 'logged_in'}
 					%p Hi, {{user_name}} :)
 					%textarea#message{placeholder: 'Message to the researchers'}
 					%input#name{:name => 'name'}

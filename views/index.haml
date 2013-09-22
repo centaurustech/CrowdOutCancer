@@ -16,7 +16,8 @@
 						%cite by Cancer Research UK
 				.pure-u-1-4.with-margin
 					.header-box.feature
-						%fb:login-button{:'show-faces' => true, width:'178px'}
+						%a{:'ng-click' => 'fb_login()', :href => '#'}
+							Log in with FaceBook
 				#circles.pure-u-1
 					#field
 						.ball.project-globe
@@ -38,7 +39,7 @@
 						%p
 							Join the crowd {{name}}!
 							%br
-							%img{:src => '{{user_image}}'}
+							%img{:'ng-src' => '{{user_image}}'}
 						%textarea#message{placeholder: 'Message to the researchers'}
 						%input#name{:type => 'text', :name => 'name'}
 						%span How much would you like to donate?

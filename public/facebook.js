@@ -56,7 +56,7 @@
 // This testAPI() function is only called in those cases. 
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
-  FB.api('/me', function(response) {
-    console.log('Good to see you, ' + response.name + '.');
+  FB.api('/me?fields=picture,name', function(response) {
+    console.log('Good to see you, ' + response.name + '. ' + response.picture.data.url);
   });
 }

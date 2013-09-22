@@ -30,6 +30,8 @@ function CrowdOutBallsCtrl ($scope) {
 			}
 		});
 
+		return false;
+
 	};
 
 	$scope.fb_logout = function () {

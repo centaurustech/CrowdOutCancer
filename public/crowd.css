@@ -23,6 +23,8 @@
 	transform: translate(0, 0, 0, 0);
 }
 
+fieldset {display:none;}
+
 .target-ball {
 	height:100px;
 	width:100px;

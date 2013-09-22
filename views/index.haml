@@ -41,10 +41,11 @@
 							%a{:'ng-click' => 'fb_login()', :href => '#'}
 								Log in with FaceBook
 							to join the crowd {{user_name}}!
-							%br
+						%fieldset
 							%img{:'ng-src' => '{{user_image}}'}
 						-#%textarea#message{placeholder: 'Message to the researchers'}
-						%span How much would you like to donate?
+						%fieldset
+							%span How much would you like to donate?
 						%fieldset
 							%legend
 							%input.donate{:'ng-click' => 'donate("£10")', :type => 'button', :name => 'amount', :value => '£10'}

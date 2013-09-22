@@ -20,12 +20,18 @@ function CrowdOutBallsCtrl ($scope, $http) {
 
 		FB.login(function(response) {
 			if (response.authResponse) {
-				console.log('Welcome!  Fetching your information.... ');
+				console.log('Welcome! Fetching your information.... ');
 				FB.api('/me?fields=picture,name', function(response) {
 					console.log('Good to see you, ' + response.name + '. ' + response.picture.data.url);
 					s.user_name = response.name;
 					s.user_image = response.picture.data.url;
 					s.logged_in = true;
+
+					var fs = document.getElementsByTagName('fieldset');
+
+					fs[0].style.display = 'block';
+					fs[1].style.display = 'block';
+
 				});
 			} else {
 				console.log('User cancelled login or did not fully authorize.');
@@ -84,7 +90,7 @@ function add_donation (d) {
 	var bg = document.getElementById('waterbg');
 	up += increment;
 
-	var bgpos = (waterlevel - up) + 'px;';
+	var bgpos = '0 ' + (waterlevel - up) + 'px;';
 
 	bg.style.backgroundPosition = bgpos;
 

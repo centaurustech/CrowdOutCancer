@@ -31,6 +31,7 @@ function CrowdOutBallsCtrl ($scope, $http) {
 
 					fs[0].style.display = 'block';
 					fs[1].style.display = 'block';
+					fs[2].style.display = 'block';
 
 				});
 			} else {

@@ -40,6 +40,10 @@ function CrowdOutBallsCtrl ($scope) {
 		});
 	};
 
+	$scope.donate = function () {
+		
+	};
+
 }
 
  // If your Heroku application is within the EU region,
